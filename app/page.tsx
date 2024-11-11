@@ -51,6 +51,7 @@ export function OrbitingCirclesDemo() {
       >
         <Icons.gitHub />
       </OrbitingCircles>
+      <div>Abcdefghijklmnopqrstuvwxyz</div>
     </div>
   );
 }
