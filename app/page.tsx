@@ -1,9 +1,10 @@
+import NavBar from "@/components/navbar";
 import OrbitingCircles from "@/components/ui/orbiting-circles";
 
 export default function Home() {
   return (
     <div>
-      <OrbitingCirclesDemo />
+      <NavBar />
     </div>
   );
 }
