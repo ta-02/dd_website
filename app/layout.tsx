@@ -1,21 +1,12 @@
 import type { Metadata } from "next";
+import Header from "@/components/header";
 import localFont from "next/font/local";
 import "./globals.css";
-import NavBar from "@/components/navbar";
 import Footer from "@/components/footer";
+import { ThemeProvider } from "@/components/theme-provider";
 
 const telegraf = localFont({
   src: "./fonts/TelegrafRegular.woff",
-  weight: "800",
-});
-
-const telegrafBold = localFont({
-  src: "./fonts/TelegrafUltraBold.woff",
-  weight: "800",
-});
-
-const telegraflight = localFont({
-  src: "./fonts/TelegrafUltraLight.woff",
   weight: "800",
 });
 
@@ -33,13 +24,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${telegraf.className} ${telegraf.className} antialiased`}
-      >
-        <NavBar />
-        {children}
-        <Footer />
+    <html lang="en" suppressHydrationWarning={true}>
+      <body className={telegraf.className + " vsc-initialized"}>
+        <ThemeProvider attribute="class">
+          <Header />
+          {children}
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );

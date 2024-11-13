@@ -12,7 +12,7 @@ export default function NavBar() {
     <div className="">
       <div className="flex flex-col sm:flex-row justify-between p-1 items-center">
         <div className="flex">
-          <img src="../public/DD_LOGO.png" />
+          {/* <img src="/DD_LOGO.png" /> */}
           <h1 className="text-2xl">Double Degrees</h1>
         </div>
 
