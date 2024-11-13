@@ -10,39 +10,47 @@ import {
 export default function NavBar() {
   return (
     <div className="">
-      <div className="flex flex-col sm:flex-row justify-between items-center">
-        <div className="">
-          <h1 className="">Double Degrees</h1>
+      <div className="flex flex-col sm:flex-row justify-between p-1 items-center">
+        <div className="flex">
+          <img src="../public/DD_LOGO.png" />
+          <h1 className="text-2xl">Double Degrees</h1>
         </div>
 
         {/* Navigation Menu */}
         <NavigationMenu>
-          <NavigationMenuList className="">
+          <NavigationMenuList className="flex p-2 space-x-6">
             <NavigationMenuItem>
-              <NavigationMenuLink className="">Home</NavigationMenuLink>
+              <NavigationMenuLink href="/">Home</NavigationMenuLink>
             </NavigationMenuItem>
 
             {/* Events Dropdown */}
-            <NavigationMenuItem>
-              <NavigationMenuTrigger className="">Events</NavigationMenuTrigger>
-              <NavigationMenuContent className="">
-                <NavigationMenuLink className="">
+            <NavigationMenuItem className="relative">
+              <NavigationMenuTrigger className="text-base">
+                Events
+              </NavigationMenuTrigger>
+              <NavigationMenuContent className="absolute">
+                <NavigationMenuLink href="/events/upcoming">
                   Upcoming Events
                 </NavigationMenuLink>
-                <NavigationMenuLink className="">
+                <NavigationMenuLink href="/events/past">
                   Past Events
                 </NavigationMenuLink>
-                <NavigationMenuLink className="">
+                <NavigationMenuLink href="/events/archived">
                   Archived Events
                 </NavigationMenuLink>
               </NavigationMenuContent>
             </NavigationMenuItem>
 
-            <NavigationMenuItem>
-              <NavigationMenuLink className="">About Me</NavigationMenuLink>
+            <NavigationMenuItem className="">
+              <NavigationMenuLink className="" href="/about">
+                About Me
+              </NavigationMenuLink>
             </NavigationMenuItem>
-            <NavigationMenuItem>
-              <NavigationMenuLink className="">Contact Us</NavigationMenuLink>
+
+            <NavigationMenuItem className="">
+              <NavigationMenuLink href="/contactus">
+                Contact Us
+              </NavigationMenuLink>
             </NavigationMenuItem>
           </NavigationMenuList>
         </NavigationMenu>
