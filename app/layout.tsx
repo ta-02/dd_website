@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import NavBar from "@/components/navbar";
+import Footer from "@/components/footer";
 
 const telegraf = localFont({
   src: "./fonts/TelegrafRegular.woff",
@@ -35,7 +37,9 @@ export default function RootLayout({
       <body
         className={`${telegraf.className} ${telegraf.className} antialiased`}
       >
+        <NavBar />
         {children}
+        <Footer />
       </body>
     </html>
   );
